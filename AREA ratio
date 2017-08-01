@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+import arcpy
+dd=arcpy.SearchCursor("the_shpfile")
+pca=[]
+for i in dd:
+  s=i.getVaule("Shape_Area")
+  pca.append(s)
+  print sum(pca)
+var=sum(pca)
+
+
+#在ArcGIS中的字段计算器中输入以上代码，将the_shpfile改为计算图层的名字，在计算时输入 !shape_area!/var 即可计算面积比。
